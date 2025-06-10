@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Neural Network</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      padding: 40px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Neural Network Simulation</h1>
+  <p>Simple 2-layer NN: Input → ReLU → Sigmoid</p>
+
+  <input type="number" id="x1" placeholder="Enter x1" />
+  <input type="number" id="x2" placeholder="Enter x2" />
+  <br />
+  <button onclick="predict()">Predict</button>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    function relu(x) {
+      return Math.max(0, x);
+    }
+
+    function sigmoid(x) {
+      return 1 / (1 + Math.exp(-x));
+    }
+
+    function predict() {
+      const x1 = parseFloat(document.getElementById("x1").value);
+      const x2 = parseFloat(document.getElementById("x2").value);
+
+      if (isNaN(x1) || isNaN(x2)) {
+        document.getElementById("output").textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      // Example NN weights and biases
+      const hidden1 = relu(0.5 * x1 + 0.3 * x2 - 0.4);
+      const hidden2 = relu(-0.7 * x1 + 0.6 * x2 + 0.2);
+
+      const output = sigmoid(1.2 * hidden1 - 0.8 * hidden2 + 0.1);
+      const predictedClass = output > 0.5 ? 1 : 0;
+
+      document.getElementById("output").innerHTML = `
+        Output Activation: ${output.toFixed(4)} <br />
+        Predicted Class: <strong>${predictedClass}</strong>
+      `;
+    }
+  </script>
+
+</body>
+</html>

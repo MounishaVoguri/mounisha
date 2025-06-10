@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>KNN Regression</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      background: #f0f8ff;
+      padding: 40px;
+    }
+    input, button {
+      padding: 10px;
+      margin: 10px;
+      font-size: 16px;
+    }
+    .output {
+      margin-top: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>KNN Regression</h1>
+  <p>Using Euclidean distance and K=3</p>
+
+  <input type="number" id="x1" placeholder="Enter x1" />
+  <input type="number" id="x2" placeholder="Enter x2" />
+  <br />
+  <button onclick="predict()">Predict Output</button>
+
+  <div class="output" id="output"></div>
+
+  <script>
+    // Sample dataset: [x1, x2, y]
+    const dataset = [
+      [1, 2, 3.5],
+      [2, 1, 2.7],
+      [3, 4, 5.1],
+      [6, 5, 8.0],
+      [7, 7, 9.3],
+      [8, 6, 9.0]
+    ];
+
+    const k = 3;
+
+    function euclideanDistance(x1, x2, y1, y2) {
+      return Math.sqrt((x1 - y1) ** 2 + (x2 - y2) ** 2);
+    }
+
+    function predict() {
+      const x1 = parseFloat(document.getElementById("x1").value);
+      const x2 = parseFloat(document.getElementById("x2").value);
+
+      if (isNaN(x1) || isNaN(x2)) {
+        document.getElementById("output").textContent = "Please enter valid numbers.";
+        return;
+      }
+
+      const distances = dataset.map(([dx1, dx2, y]) => ({
+        y,
+        distance: euclideanDistance(x1, x2, dx1, dx2)
+      }));
+
+      distances.sort((a, b) => a.distance - b.distance);
+      const neighbors = distances.slice(0, k);
+
+      const avgY = neighbors.reduce((sum, n) => sum + n.y, 0) / k;
+
+      document.getElementById("output").innerHTML = `
+        Nearest Neighbors:<br>
+        ${neighbors.map(n => `y: ${n.y}, dist: ${n.distance.toFixed(2)}`).join('<br>')}<br><br>
+        Predicted Value: <strong>${avgY.toFixed(2)}</strong>
+      `;
+    }
+  </script>
+
+</body>
+</html>

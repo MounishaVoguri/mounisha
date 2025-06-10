@@ -1,0 +1,158 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>My Personal Webpage</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #f9f9f9, #e0e7ff);
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+    header {
+      padding: 30px 20px 10px;
+    }
+    .profile-img {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #4e54c8;
+    }
+    h1 {
+      margin: 10px 0;
+      color: #333;
+    }
+    .about, .academics, .achievements, .projects, .connect {
+      margin: 30px auto;
+      max-width: 600px;
+      padding: 20px;
+      background: #fff;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      border-radius: 12px;
+    }
+    .btn {
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      background: #4e54c8;
+      color: white;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .btn:hover {
+      background: #3c42aa;
+    }
+    .connect a {
+      display: block;
+      margin: 5px 0;
+      color: #4e54c8;
+      text-decoration: none;
+    }
+    .connect a:hover {
+      text-decoration: underline;
+    }
+    ul {
+      text-align: left;
+    }
+    ul li {
+      background-color: #eef;
+      padding: 10px;
+      margin: 5px 0;
+      border-radius: 6px;
+    }
+    /* Dropdown styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #fff;
+      min-width: 250px;
+      box-shadow: 0px 8px 16px rgba(0,0,0,0.2);
+      z-index: 1;
+      border-radius: 10px;
+      text-align: left;
+    }
+    .dropdown-content a {
+      color: #4e54c8;
+      padding: 12px 16px;
+      text-decoration: none;
+      display: block;
+      border-bottom: 1px solid #eee;
+    }
+    .dropdown-content a:hover {
+      background-color: #f1f1f1;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <img src="image.jpg" alt="My Photo" class="profile-img">
+    <h1>Voguri Mounisha</h1>
+  </header>
+
+  <div id="main-content">
+
+    <section class="about">
+      <h2>About Me</h2>
+      <p>Hello! I'm a passionate learner and aspiring developer. I love coding, creating cool projects, and exploring new tech!</p>
+    </section>
+
+    <section class="academics">
+      <h2>Academics</h2>
+      <button class="btn" onclick="window.open('10.jpg')">10th</button>
+      <button class="btn" onclick="window.open('inter.jpg')">Intermediate</button>
+      <button class="btn" onclick="window.open('btech1-1.jpg')">B.Tech 1-1</button>
+      <button class="btn" onclick="window.open('btech1-2.jpg')">B.Tech 1-2</button>
+      <button class="btn" onclick="window.open('btech2-1.jpg')">B.Tech 2-1</button>
+      <button class="btn" onclick="window.open('btech2-2.jpg')">B.Tech 2-2</button>
+    </section>
+
+    <section class="achievements">
+      <h2>Achievements</h2>
+      <a href="images/achievements.jpg" target="_blank">
+        <img src="sport.jpg" alt="My Achievements" style="width:100%; max-width:500px; border-radius:10px;">
+      </a>
+    </section>
+
+    <section class="projects">
+  <h2>Projects</h2>
+  <button class="btn" onclick="window.open('mlproj.html')">ML</button>
+</section>
+
+
+    <section class="connect">
+      <h2>Connect with Me</h2>
+      <a href="mailto:name@gmail.com">name.email@example.com</a>
+      <a href="https://instagram.com/yourusername" target="_blank">Instagram</a>
+      <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+    </section>
+  </div>
+
+  <script>
+    function toggleDropdown() {
+      var dropdown = document.getElementById("mlDropdown");
+      dropdown.style.display = dropdown.style.display === "block" ? "none" : "block";
+    }
+
+    window.onclick = function(event) {
+      if (!event.target.matches('.btn')) {
+        var dropdowns = document.getElementsByClassName("dropdown-content");
+        for (let i = 0; i < dropdowns.length; i++) {
+          dropdowns[i].style.display = "none";
+        }
+      }
+    }
+  </script>
+
+</body>
+</html>
