@@ -1,0 +1,1763 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Voguri Mounisha | Portfolio</title>
+
+
+    <style>
+
+        /* ================= GENERAL ================= */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Segoe UI", Arial, sans-serif;
+            background: #f7f8fc;
+            color: #222;
+            line-height: 1.6;
+        }
+
+
+        /* ================= NAVIGATION ================= */
+
+        nav {
+
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 255, 255, 0.95);
+
+            backdrop-filter: blur(10px);
+
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.08);
+
+            display: flex;
+
+            justify-content: space-between;
+            align-items: center;
+
+            padding: 15px 8%;
+        }
+
+
+        .logo {
+
+            font-size: 24px;
+
+            font-weight: bold;
+
+            color: #4e54c8;
+        }
+
+
+        nav ul {
+
+            list-style: none;
+
+            display: flex;
+
+            gap: 25px;
+        }
+
+
+        nav ul li a {
+
+            text-decoration: none;
+
+            color: #333;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+
+        nav ul li a:hover {
+
+            color: #4e54c8;
+        }
+
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 75vh;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            text-align: center;
+
+            padding: 50px 20px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #eef0ff,
+                    #ffffff
+                );
+        }
+
+
+        .hero-content {
+
+            max-width: 800px;
+        }
+
+
+        .profile-img {
+
+            width: 145px;
+
+            height: 145px;
+
+            border-radius: 50%;
+
+            object-fit: cover;
+
+            border: 5px solid #4e54c8;
+
+            margin-bottom: 20px;
+
+            box-shadow:
+                0 8px 25px
+                rgba(78, 84, 200, 0.25);
+        }
+
+
+        .hero h1 {
+
+            font-size: 48px;
+
+            color: #222;
+
+            margin-bottom: 10px;
+        }
+
+
+        .hero h2 {
+
+            font-size: 23px;
+
+            color: #4e54c8;
+
+            font-weight: 500;
+        }
+
+
+        /* ================= SECTIONS ================= */
+
+        section {
+
+            padding: 80px 8%;
+        }
+
+
+        .section-title {
+
+            text-align: center;
+
+            margin-bottom: 45px;
+        }
+
+
+        .section-title h2 {
+
+            font-size: 34px;
+
+            color: #222;
+        }
+
+
+        .section-title p {
+
+            color: #777;
+
+            margin-top: 8px;
+        }
+
+
+        /* ================= ABOUT ================= */
+
+        .about-container {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            background: white;
+
+            padding: 35px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.07);
+
+            text-align: center;
+        }
+
+
+        .about-container p {
+
+            color: #555;
+
+            font-size: 17px;
+        }
+
+
+        /* ================= SKILLS ================= */
+
+        .skills-container {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(220px, 1fr)
+                );
+
+            gap: 20px;
+        }
+
+
+        .skill-card {
+
+            background: white;
+
+            padding: 25px;
+
+            border-radius: 12px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.06);
+
+            transition: 0.3s;
+        }
+
+
+        .skill-card:hover {
+
+            transform: translateY(-5px);
+        }
+
+
+        .skill-card h3 {
+
+            color: #4e54c8;
+
+            margin-bottom: 10px;
+        }
+
+
+        .skill-card p {
+
+            color: #666;
+        }
+
+
+        /* ================= PROJECTS ================= */
+
+        #projects {
+
+            background: #eef0ff;
+        }
+
+
+        .projects-container {
+
+            max-width: 1100px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(300px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+
+        .project-card {
+
+            background: white;
+
+            padding: 28px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 6px 25px
+                rgba(0, 0, 0, 0.08);
+
+            transition: 0.3s;
+        }
+
+
+        .project-card:hover {
+
+            transform: translateY(-7px);
+
+            box-shadow:
+                0 10px 30px
+                rgba(0, 0, 0, 0.12);
+        }
+
+
+        .project-number {
+
+            display: inline-block;
+
+            background: #4e54c8;
+
+            color: white;
+
+            padding: 5px 10px;
+
+            border-radius: 5px;
+
+            font-size: 13px;
+
+            margin-bottom: 15px;
+        }
+
+
+        .project-card h3 {
+
+            font-size: 21px;
+
+            margin-bottom: 12px;
+        }
+
+
+        .project-card p {
+
+            color: #666;
+
+            margin-bottom: 18px;
+        }
+
+
+        .tech {
+
+            display: flex;
+
+            flex-wrap: wrap;
+
+            gap: 8px;
+        }
+
+
+        .tech span {
+
+            background: #eef0ff;
+
+            color: #4e54c8;
+
+            padding: 5px 10px;
+
+            border-radius: 20px;
+
+            font-size: 13px;
+        }
+
+
+        /* ================= EDUCATION ================= */
+
+        .education-container {
+
+            max-width: 1000px;
+
+            margin: auto;
+
+            background: white;
+
+            border-radius: 15px;
+
+            overflow: hidden;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.07);
+        }
+
+
+        table {
+
+            width: 100%;
+
+            border-collapse: collapse;
+        }
+
+
+        th {
+
+            background: #4e54c8;
+
+            color: white;
+
+            padding: 15px;
+        }
+
+
+        td {
+
+            padding: 15px;
+
+            text-align: center;
+
+            border-bottom: 1px solid #eee;
+        }
+
+
+        tr:hover {
+
+            background: #f8f8ff;
+        }
+
+
+        /* ================= BUTTON ================= */
+
+        .btn {
+
+            display: inline-block;
+
+            padding: 9px 17px;
+
+            border: none;
+
+            border-radius: 6px;
+
+            background: #4e54c8;
+
+            color: white;
+
+            text-decoration: none;
+
+            cursor: pointer;
+
+            font-size: 14px;
+
+            font-weight: 500;
+
+            transition: 0.3s;
+        }
+
+
+        .btn:hover {
+
+            background: #353aa0;
+
+            transform: translateY(-2px);
+        }
+
+
+        /* ================= ACHIEVEMENTS ================= */
+
+        .achievement-container {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(
+                    auto-fit,
+                    minmax(300px, 1fr)
+                );
+
+            gap: 25px;
+        }
+
+
+        .achievement-card {
+
+            background: white;
+
+            padding: 30px;
+
+            border-radius: 15px;
+
+            text-align: center;
+
+            box-shadow:
+                0 5px 20px
+                rgba(0, 0, 0, 0.07);
+
+            transition: 0.3s;
+        }
+
+
+        .achievement-card:hover {
+
+            transform: translateY(-5px);
+        }
+
+
+        .achievement-icon {
+
+            font-size: 40px;
+
+            margin-bottom: 10px;
+        }
+
+
+        .achievement-card h3 {
+
+            color: #333;
+
+            margin-bottom: 12px;
+        }
+
+
+        .achievement-card p {
+
+            color: #666;
+
+            font-size: 16px;
+
+            margin-bottom: 20px;
+        }
+
+
+        /* ================= CONTACT ================= */
+
+        #contact {
+
+            background: #eef0ff;
+        }
+
+
+        .contact-container {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            text-align: center;
+
+            background: white;
+
+            padding: 40px;
+
+            border-radius: 15px;
+
+            box-shadow:
+                0 5px 25px
+                rgba(0, 0, 0, 0.07);
+        }
+
+
+        .contact-container p {
+
+            margin: 12px 0;
+
+            color: #555;
+        }
+
+
+        .social-links {
+
+            margin-top: 25px;
+        }
+
+
+        .social-links a {
+
+            display: inline-block;
+
+            margin: 5px;
+
+            padding: 10px 18px;
+
+            border-radius: 7px;
+
+            text-decoration: none;
+
+            background: #4e54c8;
+
+            color: white;
+
+            transition: 0.3s;
+        }
+
+
+        .social-links a:hover {
+
+            background: #353aa0;
+        }
+
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            background: #1f2340;
+
+            color: white;
+
+            text-align: center;
+
+            padding: 25px;
+        }
+
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 768px) {
+
+            nav {
+
+                flex-direction: column;
+
+                gap: 10px;
+            }
+
+
+            nav ul {
+
+                gap: 12px;
+
+                flex-wrap: wrap;
+
+                justify-content: center;
+            }
+
+
+            .hero {
+
+                min-height: 65vh;
+            }
+
+
+            .hero h1 {
+
+                font-size: 36px;
+            }
+
+
+            .hero h2 {
+
+                font-size: 19px;
+            }
+
+
+            section {
+
+                padding: 60px 5%;
+            }
+
+
+            table {
+
+                font-size: 13px;
+            }
+
+
+            th,
+            td {
+
+                padding: 9px;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<!-- ================= NAVIGATION ================= -->
+
+<nav>
+
+    <div class="logo">
+        Mounisha.
+    </div>
+
+
+    <ul>
+
+        <li>
+            <a href="#home">Home</a>
+        </li>
+
+        <li>
+            <a href="#about">About</a>
+        </li>
+
+        <li>
+            <a href="#skills">Skills</a>
+        </li>
+
+        <li>
+            <a href="#projects">Projects</a>
+        </li>
+
+        <li>
+            <a href="#education">Education</a>
+        </li>
+
+        <li>
+            <a href="#achievements">Achievements</a>
+        </li>
+
+        <li>
+            <a href="#contact">Contact</a>
+        </li>
+
+    </ul>
+
+</nav>
+
+
+
+<!-- ================= HERO ================= -->
+
+<section class="hero" id="home">
+
+    <div class="hero-content">
+
+
+        <img
+            src="photo.jpg"
+            alt="Voguri Mounisha"
+            class="profile-img"
+        >
+
+
+        <h1>
+            Voguri Mounisha
+        </h1>
+
+
+        <h2>
+            AI & Machine Learning Enthusiast
+        </h2>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ABOUT ME ================= -->
+
+<section id="about">
+
+    <div class="section-title">
+
+        <h2>
+            About Me
+        </h2>
+
+        <p>
+            Get to know me
+        </p>
+
+    </div>
+
+
+    <div class="about-container">
+
+
+        <p>
+
+            Hello! I'm Mounisha, a Computer Science student
+            specializing in Artificial Intelligence and Machine
+            Learning. I enjoy coding, developing practical
+            applications, and exploring emerging technologies.
+
+        </p>
+
+
+        <br>
+
+
+        <p>
+
+            I am a consistent learner who enjoys breaking complex
+            problems into smaller and understandable steps.
+            I am always eager to improve my skills, gain new
+            knowledge, and take on challenges that help me grow
+            both personally and professionally.
+
+        </p>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= SKILLS ================= -->
+
+<section id="skills">
+
+
+    <div class="section-title">
+
+        <h2>
+            My Skills
+        </h2>
+
+        <p>
+            Technologies and areas I work with
+        </p>
+
+    </div>
+
+
+    <div class="skills-container">
+
+
+        <div class="skill-card">
+
+            <h3>
+                Programming
+            </h3>
+
+            <p>
+                Java, Python, HTML, CSS, JavaScript
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>
+                Database
+            </h3>
+
+            <p>
+                 SQL
+            </p>
+
+        </div>
+
+        <div class="skill-card">
+
+            <h3>
+                Tools
+            </h3>
+
+            <p>
+                VS Code, Jupyter Notebook,
+                Google Colab
+            </p>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects">
+
+    <div class="section-title">
+
+        <h2>
+            My Projects
+        </h2>
+
+        <p>
+            Projects and practical work
+        </p>
+
+    </div>
+
+
+    <div class="projects-container">
+
+
+        <!-- PROJECT 1 -->
+
+        <div class="project-card">
+
+            <span class="project-number">
+                Project 01
+            </span>
+
+
+            <h3>
+                Image Recognition System
+            </h3>
+
+
+            <p>
+A Python-based application that uses a
+ pre-trained ResNet50 model to identify 
+objects in images and display the predicted 
+object with its confidence score.
+            </p>
+
+
+            <div class="tech">
+
+                <span>Python</span>
+
+                <span>Tkinter</span>
+
+                <span>Torchvision</span>
+
+                <span>Machine Learning</span>
+
+            </div>
+
+
+        </div>
+
+
+
+        <!-- PROJECT 2 -->
+
+        <div class="project-card">
+
+            <span class="project-number">
+                Project 02
+            </span>
+
+
+            <h3>
+                Student Hub Application
+            </h3>
+
+
+            <p>
+
+                A student-focused web application designed to
+                provide useful academic information and resources
+                in one place. The application provides a simple
+                and user-friendly interface where students can
+                access and organize important information easily.
+
+            </p>
+
+
+            <div class="tech">
+
+                <span>HTML</span>
+
+                <span>CSS</span>
+
+                <span>Web Development</span>
+
+            </div>
+
+
+        </div>
+
+
+
+       
+
+</section>
+
+<!-- ================= EDUCATION ================= -->
+
+<section id="education">
+
+
+    <div class="section-title">
+
+        <h2>
+            Education
+        </h2>
+
+        <p>
+            My academic journey
+        </p>
+
+    </div>
+
+
+    <div class="education-container">
+
+
+        <table>
+
+
+            <tr>
+
+                <th>
+                    Education
+                </th>
+
+                <th>
+                    Institution
+                </th>
+
+                <th>
+                    Score
+                </th>
+
+                <th>
+                    Certificates
+                </th>
+
+            </tr>
+
+
+
+            <!-- BTECH -->
+
+            <tr>
+
+
+                <td>
+
+                    <strong>
+                        B.Tech
+                    </strong>
+
+                </td>
+
+
+                <td>
+
+                    Vasireddy Venkatadri
+                    Institute Of Technology
+
+                </td>
+
+
+                <td>
+
+                    CGPA: 8.5
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        class="btn"
+                        onclick="toggleSemesters()"
+                    >
+
+                        View
+
+                    </button>
+
+                </td>
+
+
+            </tr>
+
+
+
+            <!-- SEMESTERS -->
+
+            <tr
+                id="semesterRow"
+                style="display:none;"
+            >
+
+
+                <td colspan="4">
+
+
+                    <table>
+
+
+                        <tr>
+
+                            <th>
+                                Semester
+                            </th>
+
+                            <th>
+                                Certificate
+                            </th>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                1-1
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech1-1.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                1-2
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech1-2.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                2-1
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech2-1.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                2-2
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech2-2.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                3-1
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech3-1.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                3-2
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech3-2.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                4-1
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech4-1.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+
+                        <tr>
+
+                            <td>
+                                4-2
+                            </td>
+
+                            <td>
+
+                                <button
+                                    class="btn"
+                                    onclick="openCertificate('btech4-2.jpg')"
+                                >
+
+                                    View
+
+                                </button>
+
+                            </td>
+
+                        </tr>
+
+
+                    </table>
+
+
+                </td>
+
+
+            </tr>
+
+
+
+            <!-- INTERMEDIATE -->
+
+            <tr>
+
+
+                <td>
+
+                    <strong>
+                        Intermediate
+                    </strong>
+
+                </td>
+
+
+                <td>
+
+                    Sri Chaitanya
+                    Junior College
+
+                </td>
+
+
+                <td>
+
+                    89.2%
+
+                </td>
+
+
+                <td>
+
+                    <button
+                        class="btn"
+                        onclick="openCertificate('inter.jpg')"
+                    >
+
+                        View
+
+                    </button>
+
+                </td>
+
+
+            </tr>
+
+
+
+            <!-- SSC -->
+
+            <tr>
+
+
+                <td>
+
+                    <strong>
+                        SSC
+                    </strong>
+
+                </td>
+
+
+                <td>
+                    Indian Springs
+                </td>
+
+
+                <td>
+                    10 GPA
+                </td>
+
+
+                <td>
+
+                    <button
+                        class="btn"
+                        onclick="openCertificate('10.jpg')"
+                    >
+
+                        View
+
+                    </button>
+
+                </td>
+
+
+            </tr>
+
+
+        </table>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= ACHIEVEMENTS ================= -->
+
+<section id="achievements">
+
+
+    <div class="section-title">
+
+        <h2>
+            Achievements & Activities
+        </h2>
+
+        <p>
+            Experiences that helped me grow beyond academics
+        </p>
+
+    </div>
+
+
+
+    <div class="achievement-container">
+
+
+
+        <!-- SPORTS -->
+
+        <div class="achievement-card">
+
+
+            <div class="achievement-icon">
+                🏆
+            </div>
+
+
+            <h3>
+                Sports Certificate
+            </h3>
+
+
+            <p>
+
+                Participating in sports helped me understand the
+                importance of teamwork, coordination, discipline,
+                and maintaining physical fitness. It also taught
+                me how to work with others toward a common goal
+                and stay motivated during challenges.
+
+            </p>
+
+
+            <button
+                class="btn"
+                onclick="openCertificate('sport.jpg')"
+            >
+
+                View Certificate
+
+            </button>
+
+
+        </div>
+
+
+
+        <!-- NSS -->
+
+        <div class="achievement-card">
+
+
+            <div class="achievement-icon">
+                🤝
+            </div>
+
+
+            <h3>
+                NSS Special Camp Certificate
+            </h3>
+
+
+            <p>
+
+                Participating in the NSS Special Camp helped me
+                improve my communication and collaboration skills.
+                It gave me the opportunity to work with others,
+                help people in the community, take responsibility,
+                and understand the importance of teamwork and
+                social service.
+
+            </p>
+
+
+            <button
+                class="btn"
+                onclick="openCertificate('nss.jpg')"
+            >
+
+                View Certificate
+
+            </button>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+
+    <div class="section-title">
+
+        <h2>
+            Let's Connect
+        </h2>
+
+        <p>
+            Feel free to reach out to me
+        </p>
+
+    </div>
+
+
+
+    <div class="contact-container">
+
+
+        <p>
+
+            📧
+
+            <strong>
+                Email:
+            </strong>
+
+            mounishavoguri@gmail.com
+
+        </p>
+
+
+
+        <p>
+
+            📱
+
+            <strong>
+                Phone:
+            </strong>
+
+            +91 63055 22690
+
+        </p>
+
+
+
+        <div class="social-links">
+
+
+            <a
+                href="https://www.linkedin.com/in/mounisha-voguri-97aa4a349/"
+                target="_blank"
+            >
+
+                LinkedIn
+
+            </a>
+
+
+
+            <a
+                href="https://github.com/MounishaVoguri"
+                target="_blank"
+            >
+
+                GitHub
+
+            </a>
+
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+
+    <p>
+
+        © 2026 Voguri Mounisha.
+        All Rights Reserved.
+
+    </p>
+
+
+</footer>
+
+
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+
+    /* ================= SEMESTER TOGGLE ================= */
+
+
+    function toggleSemesters() {
+
+
+        const row =
+            document.getElementById("semesterRow");
+
+
+        if (
+            row.style.display === "none" ||
+            row.style.display === ""
+        ) {
+
+
+            row.style.display =
+                "table-row";
+
+
+        } else {
+
+
+            row.style.display =
+                "none";
+
+        }
+
+    }
+
+
+
+    /* ================= CERTIFICATE VIEWER ================= */
+
+
+    function openCertificate(imageFile) {
+
+
+        const newWindow =
+            window.open("", "_blank");
+
+
+        newWindow.document.write(`
+
+            <!DOCTYPE html>
+
+            <html>
+
+            <head>
+
+                <title>
+                    Certificate
+                </title>
+
+
+                <style>
+
+
+                    body {
+
+                        font-family:
+                        Arial, sans-serif;
+
+                        background:
+                        linear-gradient(
+                            135deg,
+                            #f9f9f9,
+                            #e0e7ff
+                        );
+
+                        margin: 0;
+
+                        padding: 30px;
+
+                        text-align: center;
+
+                    }
+
+
+                    h2 {
+
+                        color: #4e54c8;
+
+                        margin-bottom: 25px;
+
+                    }
+
+
+                    img {
+
+                        max-width: 90%;
+
+                        max-height: 80vh;
+
+                        border-radius: 12px;
+
+                        box-shadow:
+                        0 4px 15px
+                        rgba(0,0,0,0.2);
+
+                    }
+
+
+                </style>
+
+
+            </head>
+
+
+            <body>
+
+
+                <h2>
+                    Certificate
+                </h2>
+
+
+                <img
+                    src="${imageFile}"
+                    alt="Certificate"
+                >
+
+
+            </body>
+
+
+            </html>
+
+        `);
+
+
+        newWindow.document.close();
+
+    }
+
+
+</script>
+
+
+</body>
+
+</html>
